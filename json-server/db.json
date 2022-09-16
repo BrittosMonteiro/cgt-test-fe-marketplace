@@ -1,0 +1,22 @@
+{
+  "product": [
+    {
+      "id": 1,
+      "name": "Product A",
+      "price": 10,
+      "imgPath": "product_a.jpg"
+    },
+    {
+      "id": 2,
+      "name": "Product B",
+      "price": 30,
+      "imgPath": "product_b.jpg"
+    }
+  ],
+  "cart": [
+    {
+      "idItem": 2,
+      "id": 1
+    }
+  ]
+}
