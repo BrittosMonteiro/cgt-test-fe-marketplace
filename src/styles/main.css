@@ -1,0 +1,9 @@
+* {
+  font-family: "Inter", sans-serif;
+  text-decoration: none !important;
+  list-style-type: none;
+}
+
+.navbar a {
+  color: #fff;
+}

@@ -1,11 +1,13 @@
 import * as React from "react";
+import img_path_a from "../../assets/a.jpg";
+import img_path_b from "../../assets/b.jpg";
 
 export default function Product(props) {
   return (
-    <div className="row align-items-start justify-content-between">
+    <div className="row align-items-start justify-content-between my-4">
       <div className="col-sm-12 col-md-6">
         <img
-          src={null}
+          src={props.product.id === 1 ? img_path_a : img_path_b}
           width={450}
           alt={props.product.name}
           className="img-thumbnail"
