@@ -1,16 +1,17 @@
-export default class CartService {
-  getCartItems() {
-    return fetch("http://localhost:4000/cart");
-  }
+const API_URL = "http://localhost:4000";
+const END_POINT = "/cart";
+const CART_API_URL = `${API_URL}${END_POINT}`;
 
-  addCartItem(data) {
-    // console.log(data)
-    return fetch("http://localhost:4000/cart", {
-      method: "POST",
-      body: JSON.stringify(data),
-      headers: {
-        "Content-Type": "application/json",
-      },
-    });
-  }
+export function getCartItems() {
+  return fetch(CART_API_URL);
+}
+
+export function addCartItem(data) {
+  return fetch(CART_API_URL, {
+    method: "POST",
+    body: JSON.stringify(data),
+    headers: {
+      "Content-Type": "application/json",
+    },
+  });
 }
