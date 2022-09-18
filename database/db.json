@@ -15,6 +15,31 @@
         "tag": "MOST SEARCHED",
         "tag_color": 1,
         "description": "It's been our most search art of the week! \n Take your time to have a look!"
+    }, {
+        "id": 3,
+        "name": "Product C",
+        "price": 10,
+        "img_name": "a.jpg",
+        "tag": "ON SALE",
+        "tag_color": 0,
+        "description": "You might probably be very interested in the new astronaut design!"
+    }, {
+        "id": 4,
+        "name": "Product D",
+        "price": 30,
+        "img_name": "b.jpg",
+        "tag": "MOST SEARCHED",
+        "tag_color": 1,
+        "description": "It's been our most search art of the week! \n Take your time to have a look!"
     }],
+    "highlights": {
+        "id": 1,
+        "name": "Product A",
+        "price": 10,
+        "img_name": "a.jpg",
+        "tag": "ON SALE",
+        "tag_color": 0,
+        "description": "You might probably be very interested in the new astronaut design!"
+    },
     "cart": []
 }

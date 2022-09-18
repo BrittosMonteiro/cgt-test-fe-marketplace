@@ -13,7 +13,8 @@ export default function CardItem(props) {
           <span>
             <Link
               to={"/product/" + props.product.id}
-            >{`${props.product.name} - `}</Link>
+            >{`${props.product.name}`}</Link>
+            {" - "}
             <CurrencyFormat
               value={props.product.price}
               displayType={"text"}
