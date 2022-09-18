@@ -54,7 +54,7 @@ export default function Home() {
               />
             </div>
           </div>
-          {key < productList.length - 1 ? <hr /> : ""}
+          {key < productsList.length - 1 ? <hr /> : ""}
         </React.Fragment>
       ))}
     </div>
