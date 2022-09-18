@@ -4,45 +4,22 @@ import Home from "./components/home/Home";
 import Product from "./components/product/Product";
 import Cart from "./components/cart/Cart";
 import React from "react";
-import Footer from "./components/common/footer/Footer";
+import { CartProvider } from "./context/CartContext";
+// import Footer from "./components/common/footer/Footer";
 
 function App() {
   return (
     <Router>
-      <Header />
-      <main className="container" style={{height: '100%'}}>
-        <Routes>
-          <Route path="/" exact="true" element={<Home />}></Route>
-          <Route
-            path="/product/1"
-            element={
-              <Product
-                product={{
-                  id: 1,
-                  name: "Product A",
-                  price: 30,
-                  img_path: "a.jpg",
-                }}
-              />
-            }
-          ></Route>
-          <Route
-            path="/product/2"
-            element={
-              <Product
-                product={{
-                  id: 2,
-                  name: "Product B",
-                  price: 10,
-                  img_path: "b.jpg",
-                }}
-              />
-            }
-          ></Route>
-          <Route path="/cart" element={<Cart />}></Route>
-        </Routes>
-      </main>
-      <Footer />
+      <CartProvider>
+        <Header />
+        <main className="container" style={{ height: "100%" }}>
+          <Routes>
+            <Route path="/" exact="true" element={<Home />}></Route>
+            <Route path="/product/:idProduct" element={<Product />}></Route>
+            <Route path="/cart" element={<Cart />}></Route>
+          </Routes>
+        </main>
+      </CartProvider>
     </Router>
   );
 }
