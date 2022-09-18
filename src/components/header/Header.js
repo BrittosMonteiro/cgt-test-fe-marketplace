@@ -1,3 +1,5 @@
+import { Link } from "react-router-dom";
+
 function cartItems() {
   return [];
 }
@@ -9,11 +11,11 @@ export default function Header() {
       <nav>
         <ul style={{ listStyleType: "none", display: "flex" }}>
           <li>
-            <a href="/">Home</a>
+            <Link to="/">Home</Link>
           </li>
           |
           <li>
-            <a href="/cart">Cart ({cartItems().length})</a>
+            <Link to="/cart">Cart ({cartItems().length})</Link>
           </li>
         </ul>
       </nav>
