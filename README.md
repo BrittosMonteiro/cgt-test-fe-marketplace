@@ -61,4 +61,4 @@ See the section about [deployment](https://facebook.github.io/create-react-app/d
 
 ### `npm run backend`
 
-Launches a fake back-end to test the application.
+Launches a fake back-end to test the application, which is going to run on http://localhost:4000
