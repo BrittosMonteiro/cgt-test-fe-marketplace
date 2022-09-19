@@ -15,7 +15,7 @@ export default function Cart() {
       <p className="fs-2 fw-light">Are you ready to purchase these items?</p>
       <div className="row">
         <div className="col-sm-12 col-md-12 col-lg-9 mb-4">
-          <div className="card rounded-sm mb-4">
+          <div className="card rounded-0 mb-4">
             <h1 className="card-header fw-light fs-5">Your items</h1>
             <ul className="list-group list-group-flush">
               {cartItems.map((item) => (
@@ -24,22 +24,29 @@ export default function Cart() {
                 </li>
               ))}
             </ul>
+            {cartItems.length <= 0 ? (
+              <div className="card-body">
+                <p className="m-0">Your cart is empty</p>
+              </div>
+            ) : null}
           </div>
-          <div className="d-flex justify-content-start">
-            <button
-              type="button"
-              className="btn btn-outline-danger btn-sm"
-              onClick={() => clearCart()}
-            >
-              REMOVE ALL ITEMS
-            </button>
-          </div>
+          {cartItems.length > 0 ? (
+            <div className="d-flex justify-content-start">
+              <button
+                type="button"
+                className="btn btn-outline-danger btn-sm rounded-0"
+                onClick={() => clearCart()}
+              >
+                REMOVE ALL ITEMS
+              </button>
+            </div>
+          ) : null}
         </div>
         <div className="col-sm-12 col-md-6 col-lg-3">
-          <div className="card rounded-sm">
+          <div className="card rounded-0">
             <h1 className="card-header fw-light fs-5">Checkout</h1>
             <div className="card-body">
-              <p className="">
+              <p className="m-0">
                 Total:{" "}
                 <CurrencyFormat
                   value={totalAmout}
@@ -51,12 +58,14 @@ export default function Cart() {
                 />
               </p>
               <div className="d-grid">
-                <button
-                  className="btn btn-outline-success rounded-sm block"
-                  type="button"
-                >
-                  Payment
-                </button>
+                {cartItems.length > 0 ? (
+                  <button
+                    className="btn btn-outline-success rounded-0 block"
+                    type="button"
+                  >
+                    Payment
+                  </button>
+                ) : null}
               </div>
             </div>
           </div>

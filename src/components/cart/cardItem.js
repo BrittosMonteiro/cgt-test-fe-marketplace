@@ -28,7 +28,10 @@ export default function CardItem(props) {
             Total of item:{" "}
             <CurrencyFormat
               className="m-0 p-0"
-              value={props.product.price * props.product.qty}
+              value={
+                (props.product.totalPrice =
+                  props.product.price * props.product.qty)
+              }
               displayType={"text"}
               thousandSeparator={true}
               prefix={"USD "}
@@ -40,7 +43,7 @@ export default function CardItem(props) {
         <div className="col-sm-12 col-md-3 ">
           <div className="input-group" style={{ justifyContent: "end" }}>
             <button
-              className="btn btn-outline-secondary"
+              className="btn btn-outline-dark rounded-0"
               type="button"
               onClick={() => updateItemQtyInCart(props.product.id)}
             >
@@ -48,7 +51,7 @@ export default function CardItem(props) {
             </button>
             <input
               type="number"
-              className="form-control"
+              className="form-control rounded-0"
               placeholder="Quantity"
               style={{ maxWidth: "110px" }}
               min={0}
@@ -56,7 +59,7 @@ export default function CardItem(props) {
               defaultValue={props.product.qty}
             />
             <button
-              className="btn btn-outline-secondary"
+              className="btn btn-outline-dark rounded-0"
               type="button"
               onClick={() => updateItemQtyInCart(props.product.id)}
             >
@@ -67,7 +70,7 @@ export default function CardItem(props) {
       </div>
       <p
         className="p-0 mt-2 mb-0 text-end fw-regular fs-7 text-danger"
-        style={{ cursor: "pointer" }}
+        style={{ cursor: "pointer", fontSize: "14px" }}
         title="Remove item from cart"
         onClick={() => removeItemFromCart(props.product.id)}
       >

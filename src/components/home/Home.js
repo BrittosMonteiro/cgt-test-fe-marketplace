@@ -12,7 +12,6 @@ export default function Home() {
     getHighlightItem()
       .then((res) => res.json())
       .then((res) => {
-        console.log(res);
         setHighlightItem(res);
       })
       .catch((err) => {
@@ -62,7 +61,7 @@ export default function Home() {
             src={"img/" + highlightItem.img_name}
             alt={highlightItem.name}
             title={highlightItem.name}
-            className="img-thumbnail rounded-sm"
+            className="img-thumbnail rounded-0"
           />
         </div>
       </div>
@@ -82,7 +81,7 @@ export default function Home() {
                   src={`img/${product.img_name}`}
                   alt={product.name}
                   title={product.name}
-                  className="container__img"
+                  className="container__img rounded-0"
                 />
                 <div className="card-body">
                   <span>
