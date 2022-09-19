@@ -7,7 +7,7 @@ export default function Cart() {
   const { cartItems, clearCart } = useCartOptions();
 
   let totalAmout = cartItems.reduce((total, item) => {
-    return total + item.price;
+    return total + item.price * item.qty;
   }, 0);
 
   return (

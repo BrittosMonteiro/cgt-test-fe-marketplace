@@ -9,60 +9,76 @@ export function useCartOptions() {
 export function CartProvider({ children }) {
   const navigate = useNavigate();
 
-  const [cartItems, setCartItems] = React.useState([]);
-  const [cartTotalItems, setCartTotalItems] = React.useState(0);
+  let cart = JSON.parse(localStorage.getItem("cart") || "[]");
+
+  const [cartItems, setCartItems] = React.useState(cart);
+  const [cartTotalItems, setCartTotalItems] = React.useState(cart.length);
 
   function addItemToCart(product) {
     const idProduct = parseInt(product.id);
 
-    let pos = cartItems.findIndex((e) => {
+    let pos = cart.findIndex((e) => {
       return e.id === parseInt(idProduct);
     });
 
     if (pos < 0) {
       product.qty = 1;
-      cartItems.push(product);
-      setCartTotalItems(cartItems.length);
+      cart.push(product);
     } else {
-      cartItems.findIndex((e) => {
+      cart.findIndex((e) => {
         if (e.id === idProduct) {
-          e.qty++;
+          e.qty = e.qty + 1;
         }
       });
     }
 
+    localStorage.setItem("cart", JSON.stringify(cart));
+    setCartItems(cart);
+    setCartTotalItems(cart.length);
+
     navigate("/cart");
   }
 
-  function updateItemQtyInCart(id) {
+  function updateItemQtyInCart(id, newQty) {
+    console.log(id, newQty)
     const idProduct = parseInt(id);
-    let pos = cartItems.findIndex((e) => e.id === idProduct);
+    let pos = cart.findIndex((e) => e.id === idProduct);
 
     if (pos < 0) return;
 
-    cartItems.findIndex((e) => {
+    cart.findIndex((e) => {
       if (e.id === idProduct) {
-        e.qty++;
+        e.qty = e.qty + newQty;
+        if(e.qty === 0){
+          removeItemFromCart(idProduct)
+        }
       }
     });
 
-    setCartItems(cartItems);
+    localStorage.setItem('cart', JSON.stringify(cart))
+    setCartItems(cart);
+    setCartTotalItems(cart.length);
   }
 
   function removeItemFromCart(id) {
     const idProduct = parseInt(id);
-    let pos = cartItems.findIndex((e) => e.id === idProduct);
+    let pos = cart.findIndex((e) => e.id === idProduct);
 
     if (pos < 0) return;
 
-    cartItems.splice(pos, 1);
-    setCartItems(cartItems);
-    setCartTotalItems(cartItems.length);
+    cart.splice(pos, 1);
+
+    localStorage.setItem("cart", JSON.stringify(cart));
+    setCartItems(cart);
+    setCartTotalItems(cart.length);
   }
 
   function clearCart() {
-    setCartItems([]);
-    setCartTotalItems(cartItems.length);
+    cart.length = 0;
+    localStorage.removeItem("cart");
+
+    setCartItems(cart);
+    setCartTotalItems(cart.length);
   }
 
   const cartStates = {

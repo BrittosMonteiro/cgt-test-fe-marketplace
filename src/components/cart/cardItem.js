@@ -28,10 +28,7 @@ export default function CardItem(props) {
             Total of item:{" "}
             <CurrencyFormat
               className="m-0 p-0"
-              value={
-                (props.product.totalPrice =
-                  props.product.price * props.product.qty)
-              }
+              value={props.product.price * props.product.qty}
               displayType={"text"}
               thousandSeparator={true}
               prefix={"USD "}
@@ -45,23 +42,23 @@ export default function CardItem(props) {
             <button
               className="btn btn-outline-dark rounded-0"
               type="button"
-              onClick={() => updateItemQtyInCart(props.product.id)}
+              onClick={() => updateItemQtyInCart(props.product.id, -1)}
             >
               -1
             </button>
             <input
-              type="number"
+              type="text"
               className="form-control rounded-0"
               placeholder="Quantity"
               style={{ maxWidth: "110px" }}
               min={0}
-              onChange={() => updateItemQtyInCart(props.product.id)}
-              defaultValue={props.product.qty}
+              value={props.product.qty}
+              disabled
             />
             <button
               className="btn btn-outline-dark rounded-0"
               type="button"
-              onClick={() => updateItemQtyInCart(props.product.id)}
+              onClick={() => updateItemQtyInCart(props.product.id, +1)}
             >
               +1
             </button>
