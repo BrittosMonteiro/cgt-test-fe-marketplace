@@ -1,7 +1,8 @@
 import * as React from "react";
-import CardItem from "./cardItem";
+import CardItem from "./CardItem";
 import { useCartOptions } from "../../context/CartContext";
 import CurrencyFormat from "react-currency-format";
+import { addOrderItem, getPastOrders } from "../../service/order-service";
 
 export default function Cart() {
   const { cartItems, clearCart } = useCartOptions();
@@ -9,6 +10,18 @@ export default function Cart() {
   let totalAmout = cartItems.reduce((total, item) => {
     return total + item.price * item.qty;
   }, 0);
+
+  function finishCart() {
+    addOrderItem()
+      .then((res) => {
+        if (res.status === 201) {
+          clearCart();
+        }
+      })
+      .catch((err) => {
+        console.log(err);
+      });
+  }
 
   return (
     <div className="py-4">
@@ -62,6 +75,7 @@ export default function Cart() {
                   <button
                     className="btn btn-outline-success rounded-0 block"
                     type="button"
+                    onClick={() => finishCart()}
                   >
                     Payment
                   </button>

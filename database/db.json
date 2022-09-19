@@ -1,45 +1,97 @@
 {
-    "products": [{
+  "products": [
+    {
+      "id": 1,
+      "name": "Product A",
+      "price": 10,
+      "img_name": "a.jpg",
+      "tag": "ON SALE",
+      "tag_color": 0,
+      "description": "You might probably be very interested in the new astronaut design!"
+    },
+    {
+      "id": 2,
+      "name": "Product B",
+      "price": 30,
+      "img_name": "b.jpg",
+      "tag": "MOST SEARCHED",
+      "tag_color": 1,
+      "description": "It's been our most search art of the week! \n Take your time to have a look!"
+    },
+    {
+      "id": 3,
+      "name": "Product C",
+      "price": 10,
+      "img_name": "a.jpg",
+      "tag": "ON SALE",
+      "tag_color": 0,
+      "description": "You might probably be very interested in the new astronaut design!"
+    },
+    {
+      "id": 4,
+      "name": "Product D",
+      "price": 30,
+      "img_name": "b.jpg",
+      "tag": "MOST SEARCHED",
+      "tag_color": 1,
+      "description": "It's been our most search art of the week! \n Take your time to have a look!"
+    }
+  ],
+  "highlights": {
+    "id": 1,
+    "name": "Product A",
+    "price": 10,
+    "img_name": "a.jpg",
+    "tag": "ON SALE",
+    "tag_color": 0,
+    "description": "You might probably be very interested in the new astronaut design!"
+  },
+  "orders": [
+    [
+      {
         "id": 1,
         "name": "Product A",
         "price": 10,
         "img_name": "a.jpg",
         "tag": "ON SALE",
         "tag_color": 0,
-        "description": "You might probably be very interested in the new astronaut design!"
-    }, {
-        "id": 2,
-        "name": "Product B",
-        "price": 30,
-        "img_name": "b.jpg",
-        "tag": "MOST SEARCHED",
-        "tag_color": 1,
-        "description": "It's been our most search art of the week! \n Take your time to have a look!"
-    }, {
+        "description": "You might probably be very interested in the new astronaut design!",
+        "qty": 4
+      }
+    ],
+    [
+      {
         "id": 3,
         "name": "Product C",
         "price": 10,
         "img_name": "a.jpg",
         "tag": "ON SALE",
         "tag_color": 0,
-        "description": "You might probably be very interested in the new astronaut design!"
-    }, {
-        "id": 4,
-        "name": "Product D",
-        "price": 30,
-        "img_name": "b.jpg",
-        "tag": "MOST SEARCHED",
-        "tag_color": 1,
-        "description": "It's been our most search art of the week! \n Take your time to have a look!"
-    }],
-    "highlights": {
+        "description": "You might probably be very interested in the new astronaut design!",
+        "qty": 1
+      }
+    ],
+    [
+      {
         "id": 1,
         "name": "Product A",
         "price": 10,
         "img_name": "a.jpg",
         "tag": "ON SALE",
         "tag_color": 0,
-        "description": "You might probably be very interested in the new astronaut design!"
-    },
-    "cart": []
+        "description": "You might probably be very interested in the new astronaut design!",
+        "qty": 6
+      },
+      {
+        "id": 2,
+        "name": "Product B",
+        "price": 30,
+        "img_name": "b.jpg",
+        "tag": "MOST SEARCHED",
+        "tag_color": 1,
+        "description": "It's been our most search art of the week! \n Take your time to have a look!",
+        "qty": 2
+      }
+    ]
+  ]
 }
