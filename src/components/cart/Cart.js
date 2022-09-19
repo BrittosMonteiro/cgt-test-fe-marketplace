@@ -2,7 +2,7 @@ import * as React from "react";
 import CardItem from "./CardItem";
 import { useCartOptions } from "../../context/CartContext";
 import CurrencyFormat from "react-currency-format";
-import { addOrderItem, getPastOrders } from "../../service/order-service";
+import { addOrderItem } from "../../service/order-service";
 
 export default function Cart() {
   const { cartItems, clearCart } = useCartOptions();

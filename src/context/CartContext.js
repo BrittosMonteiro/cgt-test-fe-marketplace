@@ -40,7 +40,6 @@ export function CartProvider({ children }) {
   }
 
   function updateItemQtyInCart(id, newQty) {
-    console.log(id, newQty)
     const idProduct = parseInt(id);
     let pos = cart.findIndex((e) => e.id === idProduct);
 
