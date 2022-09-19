@@ -2,7 +2,6 @@ import * as React from "react";
 import CardItem from "./CardItem";
 import { useCartOptions } from "../../context/CartContext";
 import CurrencyFormat from "react-currency-format";
-import { addOrderItem } from "../../service/order-service";
 
 export default function Cart() {
   const { cartItems, clearCart } = useCartOptions();
@@ -12,15 +11,7 @@ export default function Cart() {
   }, 0);
 
   function finishCart() {
-    addOrderItem()
-      .then((res) => {
-        if (res.status === 201) {
-          clearCart();
-        }
-      })
-      .catch((err) => {
-        console.log(err);
-      });
+    clearCart();
   }
 
   return (
