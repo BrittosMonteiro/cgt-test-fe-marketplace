@@ -1,5 +1,5 @@
 import * as React from "react";
-import CardItem from "./CardItem";
+import CardItem from "./cardItem";
 import { useCartOptions } from "../../context/CartContext";
 import CurrencyFormat from "react-currency-format";
 
